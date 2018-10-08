@@ -36,6 +36,10 @@ public class FuncionarioFachada {
     public void insereFuncionarios(String nome, String cpf, String senha) {
         
         Query query = em.createNamedQuery("Clientes.insereFuncionario");
+        query.setParameter(1, nome);
+        query.setParameter(2, cpf);
+        query.setParameter(3, senha);
+        getListaFuncionarios();
     }
     
     // Add business logic below. (Right-click in editor and choose
